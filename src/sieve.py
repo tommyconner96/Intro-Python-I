@@ -19,7 +19,7 @@ while(i <= int(math.sqrt(number))):
                 primes.remove(j)
     i = i+1
 
-# print(primes)
+print(primes)
 if number in primes:
     print("Prime Number!")
 else:

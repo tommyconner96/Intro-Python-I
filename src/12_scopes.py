@@ -7,12 +7,12 @@ x = 12
 def change_x():
     global x
     x = 99
-    print(x)
+    print(x, "- x inside function")
 
 change_x()
 
 # This prints 12. What do we have to modify in change_x() to get it to print 99?
-print(x)
+print(x, "- x outside function. global x in change_x causes this")
 
 
 # This nested function has a similar problem.
@@ -29,6 +29,6 @@ def outer():
     # This prints 120. What do we have to change in inner() to get it to print
     # 999?
     # Note: Google "python nested function scope".
-    print(y)
+    print(y, "- nonlocal y")
 
 outer()

@@ -33,19 +33,20 @@ from datetime import datetime
 
 args = sys.argv
 print(args)
+# I used TextCalendar to display the calendar in the terminal.
+# firstweekdar=6 makes the week start with Sunday.
+calendar = calendar.TextCalendar(firstweekday=6)
+date = datetime.today()
 
-if len(args) == 0:
-  print("no input specified")
-  month = datetime.now().month
-  year = datetime.now().year
 
-elif len(args) == 1:
-  month = args[0]
-  year = datetime.now().year
+if len(args) == 1:
+  print(calendar.prmonth(date.year, date.month))
 elif len(args) == 2:
-   month = args[0]
-   year = args[1]
+  month = int(args[1])
+  print(calendar.prmonth(date.year, month))
+elif len(args) == 3:
+  month = int(args[1])
+  year = int(args[2])
+  print(calendar.prmonth(year, month))
 else:
-  print("useage statement")
-
-print(month, year)
+  print("invalid args")
